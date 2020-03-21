@@ -15,6 +15,7 @@ import pickle
 import pandas as pd 
 import numpy as np 
 import scipy.stats as stats
+from scipy.stats import norm
 import random
 
 
@@ -134,6 +135,19 @@ rad9.grid(column=3, row=6)
 rad10 = Radiobutton(window,text='Bagged Tree', variable = v, value=10, command=clicked10)
 rad10.grid(column=4, row=6)  
 
+
+# Random Errors and Confidence Interval
+chk_state = BooleanVar()
+chk_state.set(False) #set check state
+chk = Checkbutton(window, text='Random Error', var=chk_state)
+chk.grid(columnspan=1, row=7)
+
+lbl = Label(window, text="Choose percent of confidence interval:")
+lbl.grid(column=2, row=7)
+combo = Combobox(window)
+combo['values']= (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95)
+combo.grid(column=3, row=7)
+a = combo.get()
 
 
 # Run Button
@@ -506,8 +520,64 @@ def clicked11():
                 X = li[field_number][['MLC_velocity','MLC_acceleration','Control_point','Dose_rate',
                          'Gravity_vector','Gantry_velocity','Gantry_acceleration']].values.reshape(-1,7)
                 y1 = clf.predict(X)
-                          
-            
+             
+                
+            # Random Error Component
+            global random_error
+            global y2
+            if chk_state.get() is True:
+                a =  1-(1-float(combo.get())/100)/2
+                if model1 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.0058389;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                
+                elif model2 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.004450461;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                
+                elif model3 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.00429875;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model4 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.004469331;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model5 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.004403707;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model6 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.003427708;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model7 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.003633729;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model8 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.003812047;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model9 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.003882166;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                elif model10 is True:
+                    random_uncertainty = stats.norm.ppf(a)*0.003884475;
+                    random_error = random_uncertainty*norm.ppf(random.random())
+                    y1 = y1 + random_error
+                    
+                    
             # Save New MLC Positions
             mlc_position = pd.to_numeric((li[field_number]['MLC_position']), errors='coerce')
             mlc_new_position = mlc_position + y1
@@ -578,7 +648,7 @@ lbl9 = Label(window, text="For research or academic purposes. Not intended for c
 lbl9.grid(columnspan=5, row=11)
 lbl10 = Label(window, text="For researchers, any publication using this tool please cite the accompanying paper")
 lbl10.grid(columnspan=5, row=12)
-lbl11 = Label(window, text="'Chuang, Adamson, Giles, A Tool for Approximating Radiotherapy Delivery via Informed Simulation (TARDIS), 2020'")
+lbl11 = Label(window, text="'Chuang, Adamson, Giles, A Tool for Approximating Radiotherapy Delivery via Informed Simulation, 2020'")
 lbl11.grid(columnspan=5, row=13)
 
 
