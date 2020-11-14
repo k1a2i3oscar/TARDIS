@@ -14,4 +14,4 @@ Tutorial:
 
 
 
-For research or academic purposes.  Not intended for clinical use.  For researchers, any publication using this tool please cite the accompanying paper “Chuang, Adamson, Giles, A Tool for Approximating Radiotherapy Delivery via Informed Simulation, 2020"
+For research or academic purposes.  Not intended for clinical use.  For researchers, any publication using this tool please cite the accompanying paper “Chuang, Adamson, Giles, A Tool for Patient Specific Prediction of Delivery Discrepancies in Machine Parameters Using Trajectory Log Files, 2020"
