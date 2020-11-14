@@ -648,7 +648,7 @@ lbl9 = Label(window, text="For research or academic purposes. Not intended for c
 lbl9.grid(columnspan=5, row=11)
 lbl10 = Label(window, text="For researchers, any publication using this tool please cite the accompanying paper")
 lbl10.grid(columnspan=5, row=12)
-lbl11 = Label(window, text="'Chuang, Adamson, Giles, A Tool for Approximating Radiotherapy Delivery via Informed Simulation, 2020'")
+lbl11 = Label(window, text="'Chuang, Adamson, Giles, A Tool for Patient Specific Prediction of Delivery Discrepancies in Machine Parameters Using Trajectory Log Files, 2020'")
 lbl11.grid(columnspan=5, row=13)
 
 
