@@ -14,4 +14,10 @@ Tutorial:
 
 
 
-For research or academic purposes.  Not intended for clinical use.  For researchers, any publication using this tool please cite the accompanying paper “Chuang, Adamson, Giles, A Tool for Patient Specific Prediction of Delivery Discrepancies in Machine Parameters Using Trajectory Log Files, 2020"
+For research or academic purposes.  Not intended for clinical use.  For researchers, any publication using this tool please cite the accompanying paper “Chuang, K. C., Giles, W., & Adamson, J. (2021). A tool for patient‐specific prediction of delivery discrepancies in machine parameters using trajectory log files. Medical Physics, 48(3), 978-990."
+
+
+
+The copyrights of the software and contents are owned by Duke University and are made available for academic purposes only. Outside contributions to the Duke-owned code base and contents cannot be accepted unless the contributor transfers the copyright to those changes over to Duke University.
+To enter a license agreement, please contact the Duke Office of Licensing and Ventures at olvquestions@duke.edu with reference to “OLV File No. 6733” in your email.
+This software is distributed AS IS, WITHOUT ANY WARRANTY; and without the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
